@@ -21,12 +21,7 @@ AFRAME.registerComponent('picker', {
     var ID = this.data.asset;
     var size = this.data.width;
     var items = document.querySelectorAll('.generate');
-
-    console.log(size);
-
-    if (checkClass(ID === ID)) {
-      this.add(ID,items,size);
-    }
+    this.add(ID,items,size);
   },
 
   add: function (ID,items,size) {
@@ -41,7 +36,7 @@ AFRAME.registerComponent('picker', {
 /**
  * Check class
  */
-function checkClass (entity, cls) {
+function checkClass(entity, cls) {
  return (' ' + entity.className + ' ').indexOf(' ' + cls + ' ') > -1;
 }
 
