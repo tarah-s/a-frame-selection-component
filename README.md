@@ -23,6 +23,9 @@ Install and use by directly including the [browser files](dist):
 
 <body>
   <a-scene>
+     <a-assets>
+        <img src="assets/one.png" id="asset-1"></img> 
+     </a-assets>
      <a-entity picker="on: click; asset: asset-1; width: 1"></a-entity>
      <a-entity class="generate"></a-entity>
   </a-scene>
