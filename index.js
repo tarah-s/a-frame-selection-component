@@ -74,7 +74,6 @@ AFRAME.registerComponent('generate', {
     entity.setAttribute('collada-model', "#" + this.data.asset);
     entity.setAttribute('scale', size + ' ' + size + ' ' + size);
 
-
     // All objects to look at camera
     entity.setAttribute('look-at', '#camera');
 
