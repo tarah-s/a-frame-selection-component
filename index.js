@@ -8,7 +8,7 @@ AFRAME.registerComponent('picker', {
   schema: {
     on: { default: 'click' },
     asset: { default: 'item'},
-    width: { default: '1' }
+    size: { default: '1' }
   },
 
   update: function (oldData) {
@@ -19,14 +19,14 @@ AFRAME.registerComponent('picker', {
 
   pick: function () {
     var ID = this.data.asset;
-    var size = this.data.width;
+    var size = this.data.size;
     var items = document.querySelectorAll('.generate');
     this.add(ID,items,size);
   },
 
   add: function (ID,items,size) {
     items.forEach(function(element) {
-      element.setAttribute('generate','img: '+ ID +'; on: click; size:' + size);
+      element.setAttribute('generate','asset: '+ ID +'; on: click; size:' + size);
     });
   }
 
@@ -45,7 +45,7 @@ AFRAME.registerComponent('generate', {
 
   schema: {
     on: { default: 'click' },
-    img: { default: '' },
+    asset: { default: '' },
     size: { default: '1' }
   },
 
@@ -66,14 +66,14 @@ AFRAME.registerComponent('generate', {
     position.setFromMatrixPosition(matrixWorld);
 
     // Reset Y to bottom of plane
-    var posY = size/2;
-    position.setY(posY);
+    var posY = size/2 + 0.2;
+    position.setY(0);
 
-    var entity = document.createElement('a-image');
+    var entity = document.createElement('a-entity');
     entity.setAttribute('position', position);
-    entity.setAttribute('src', "#" + this.data.img);
-    entity.setAttribute('width', size);
-    entity.setAttribute('height', size);
+    entity.setAttribute('collada-model', "#" + this.data.asset);
+    entity.setAttribute('scale', size + ' ' + size + ' ' + size);
+
 
     // All objects to look at camera
     entity.setAttribute('look-at', '#camera');

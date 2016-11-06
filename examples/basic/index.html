@@ -2,6 +2,7 @@
   <head>
     <title>A-Frame Selection Component - Basic</title>
     <script src="../build.js"></script>
+
     <script type="text/javascript">
 
     </script>
@@ -11,18 +12,16 @@
 
       <!-- start: assets -->
       <a-assets>
-         <img src="assets/one.png" id="asset-1"></img>
-         <img src="assets/two.png" id="asset-2"></img>
-         <img src="assets/three.png" id="asset-3"></img>
+         <a-asset-item id="model" src="assets/model.dae"></a-asset-item>
       </a-assets>
       <!-- end: assets -->
 
       <a-sky color="#e1e1e1"></a-sky>
 
       <!-- start: option selection -->
-      <a-entity geometry="primitive: box;" material="color: #91d8f3" picker="on: click; asset: asset-1; width: 1" class="clickable" position="2 1 -4"></a-entity>
-      <a-entity geometry="primitive: box;" material="color: #d8ed8d" picker="on: click; asset: asset-2; width: 2" class="clickable" position="0 1 -4"></a-entity>
-      <a-entity geometry="primitive: box;" material="color: #ff9898" picker="on: click; asset: asset-3; width: 3" class="clickable" position="-2 1 -4"></a-entity>
+      <a-entity geometry="primitive: box;" material="color: #91d8f3" picker="on: click; asset: model; size: 0.5" class="clickable" position="2 1 -4"></a-entity>
+      <a-entity geometry="primitive: box;" material="color: #d8ed8d" picker="on: click; asset: model; size: 1" class="clickable" position="0 1 -4"></a-entity>
+      <a-entity geometry="primitive: box;" material="color: #ff9898" picker="on: click; asset: model; size: 1.5" class="clickable" position="-2 1 -4"></a-entity>
       <!-- end: option selection -->
 
       <!-- start: placeholder for selection -->
