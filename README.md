@@ -4,9 +4,12 @@ A Selection component for [A-Frame](https://aframe.io).
 
 ### API
 
-| Property | Description | Default Value |
-| -------- | ----------- | ------------- |
-|          |             |               |
+| Property | Description                   | Default Value |
+| -------- | ----------------------------- | ------------- |
+| on       |  Copies the settings          | click         |
+| asset    |  Model from assets            | model         |
+| size     |  Sets the size of the model   | 1             |
+
 
 ### Installation
 
